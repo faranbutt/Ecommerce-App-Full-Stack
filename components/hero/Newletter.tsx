@@ -3,7 +3,7 @@ import { Input } from "../ui/input";
 
 export default function Newletter() {
   return (
-    <div className="flex justify-center relative z-10 items-center flex-col text-center px-5 md:px-40 py-32">
+    <div className="flex justify-center relative z-10 items-center flex-col text-center px-5 md:px-40 py-20 md:py-32">
       <div className="text-6xl md:text-9xl mt-10 tracking-wide text-[#f2f3f7] absolute font-extrabold z-0">
         Newsletter
       </div>
