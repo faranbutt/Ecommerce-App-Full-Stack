@@ -3,13 +3,13 @@ import { Button } from "../ui/button";
 
 export default function Promote() {
   return (
-    <div className="flex flex-col justify-center items-center m-10">
+    <div className="flex flex-col justify-center items-center md:m-10 mt-10">
       <div>
         <div className="flex justify-center font-bold text-blue-700 mb-5">
           PROMOTIONS
         </div>
-        <h2 className="scroll-m-20 border-b pb-2 text-2xl md:text-4xl font-semibold tracking-tight transition-colors first:mt-0">
-          Our Promotions Events{" "}
+        <h2 className="scroll-m-20 border-b pb-2 text-2xl md:text-4xl font-semibold tracking-wide transition-colors first:mt-0">
+          Our Promotions Events
         </h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 md:p-10 md:bg-gradient-to-b from-orange-100 to-orange-400">

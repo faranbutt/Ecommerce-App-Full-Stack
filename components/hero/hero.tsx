@@ -12,8 +12,8 @@ export function TypographyH1() {
           </Button>
         </div>
         <div className="p-5">
-          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-            <div className="text-5xl">An Industrial Take on Streetwear</div>
+          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight md:text-6xl">
+            An Industrial Take on Streetwear
           </h1>
         </div>
         <div className="pb-10 px-5">
