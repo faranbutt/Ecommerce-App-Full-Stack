@@ -33,7 +33,7 @@ export default async function page() {
   return (
     <div className="grid grid-cols-4 mx-20 gap-x-20">
       {maleProducts.map((item) => (
-      <div>
+      <div key={item._id}>
         <Image src={urlForImage(item.image).url()} alt="person" width={400} height={400} />
         <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">{item.title}</h4>
         <p className="scroll-m-20 text-lg font-semibold tracking-tight text-gray-400">{item.description}</p>
