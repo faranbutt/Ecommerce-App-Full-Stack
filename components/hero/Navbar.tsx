@@ -14,6 +14,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Menu, XCircle } from "react-feather"; 
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 
 export default function Navbar() {
@@ -24,14 +25,14 @@ export default function Navbar() {
   return (
     <nav className="flex p-10 gap-x-28 justify-center items-center">
         <div className="ml-4">
-            <img src="/Logo.webp" alt="logo" className=""/>
+           <Link href={'/'}><img src="/Logo.webp" alt="logo" className=""/></Link> 
         </div> 
       <div className="hidden sm:block">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Female</NavigationMenuTrigger>
-            <NavigationMenuTrigger>Male</NavigationMenuTrigger>
+            <NavigationMenuTrigger><Link href={'/Female'}>Female</Link></NavigationMenuTrigger>
+            <NavigationMenuTrigger><Link href={'/Male'}>Male</Link></NavigationMenuTrigger>
             <NavigationMenuTrigger>Kids</NavigationMenuTrigger>
             <NavigationMenuTrigger>All Products</NavigationMenuTrigger>
             <NavigationMenuContent>

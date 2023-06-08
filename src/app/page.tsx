@@ -11,7 +11,6 @@ import Tail from '../../components/hero/Tail';
 export default function Home() {
   return (
     <main className="">
-      <Navbar />
       <TypographyH1 />
       <Promote />
       <Products />
