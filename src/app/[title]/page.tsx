@@ -188,7 +188,7 @@ export default function Product({ params }: { params: any }) {
       <h4 className="scroll-m-20 text-xl font-semibold tracking-wider flex flex-grow flex-shrink text-[#666] leading-5">PRODUCT CARE</h4>
       <ul className="list-disc pl-5 md:pl-14" style={{flex:'2 1'}}>
       {item.care.map((list)=>(
-        <li className="font-semibold tracking-wider text-base leading-6 text-justify text-[#212121]">{list}</li>
+        <li key={item._id} className="font-semibold tracking-wider text-base leading-6 text-justify text-[#212121]">{list}</li>
       ))}
       </ul>
       </div>
