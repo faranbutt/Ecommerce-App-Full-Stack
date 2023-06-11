@@ -5,8 +5,7 @@ import Promote from '../../components/hero/Promote';
 import Products from '../../components/hero/Products';
 import Features from '../../components/hero/Features';
 import Newletter from '../../components/hero/Newletter';
-import Footer from '../../components/hero/Footer';
-import Tail from '../../components/hero/Tail';
+
 
 export default function Home() {
   return (
@@ -16,8 +15,6 @@ export default function Home() {
       <Products />
       <Features />
       <Newletter />
-      <Footer />
-      <Tail />
     </main>
   )
 }

@@ -1,4 +1,6 @@
+import Footer from '../../components/hero/Footer'
 import Navbar from '../../components/hero/Navbar'
+import Tail from '../../components/hero/Tail'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -19,6 +21,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <Navbar />
         {children}
+        <Footer />
+        <Tail />
         </body>
     </html>
   )
