@@ -1,8 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-import { client } from "../../sanity/lib/client";
+
 import Image from "next/image";
-import { Image as IImage } from "sanity";
 import { urlForImage } from "../../sanity/lib/image";
 import { Plus, Minus } from "lucide-react";
 import { Button } from "../ui/button";
@@ -16,23 +15,8 @@ import {
 import { ShoppingCart } from "lucide-react";
 import { Items } from "@/app/[title]/page";
 
+export default function ProductHero({products}:{products:any}) {
 
-const fetchItem = async (link: any) => {
-  const item = await client.fetch(`*[_type=='dress' && title == '${link}']{
-      _id,
-      title,
-      type,
-      images,
-      details,
-      care
-    }`);
-  return item;
-};
-
-export default function ProductHero({ params }: { params: any }) {
-  const { title } = params;
-  const link = decodeURIComponent(title);
-  const [items, setItems] = useState<Items[]>([]);
   const [hoveredIndex, setHoveredIndex] = useState<number>(0);
   const [quantity, setQuantity] = useState(0);
   const increaseQuantity = () => {
@@ -41,25 +25,18 @@ export default function ProductHero({ params }: { params: any }) {
   const decreaseQuantity = () => {
     setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 0));
   };
-  useEffect(() => {
-    const fetchItems = async () => {
-      const fetchedItems: Items[] = await fetchItem(link);
-      setItems(fetchedItems);
-    };
-
-    fetchItems();
-  }, [link]);
+  console.log(products)
   return (
     <div>
       <div className="grid mx-20 items-center justify-center">
-        {items.map((item) => (
+        {products.map((item:any) => (
           <div
             key={item._id}
             className="flex flex-col md:flex-row justify-center items-center gap-5"
           >
             <div className="flex flex-grow flex-shrink basis-0 gap-8">
               <div className="flex flex-col gap-4">
-                {item.images.map((image, index) => (
+                {item.images.map((image:any, index:any) => (
                   <div
                     key={index}
                     className="relative"

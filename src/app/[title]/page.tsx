@@ -31,7 +31,7 @@ export default async function Product({ params }: { params: any }) {
     const items = await fetchItem(link);
   return (
     <div>
-     <ProductHero params={params} />
+     <ProductHero products={...items} />
      <ProductDesc products={items} />
     </div>
   );
