@@ -4,11 +4,13 @@ import { Image as IImage } from "sanity";
 import ProductHero from "../../../components/hero/Product-hero";
 import ProductDesc from "../../../components/hero/ProductDesc";
 
+
 export type Items = {
   _id: string;
   title: string;
   type: string;
   images: IImage[];
+  price:number;
   care: string[];
   details: string;
 };
@@ -19,6 +21,7 @@ const fetchItem = async (link: any) => {
     title,
     type,
     images,
+    price,
     details,
     care
   }`);

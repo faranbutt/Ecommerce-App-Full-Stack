@@ -26,6 +26,11 @@ export const dress = {
         ]
         },
         {
+            name:'price',
+            title:"Product price",
+            type: 'number',
+        },
+        {
             name:"details",
             title:"Product Details",
             type:"text"

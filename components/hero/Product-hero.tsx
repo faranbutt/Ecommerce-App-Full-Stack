@@ -15,8 +15,8 @@ import {
 import { ShoppingCart } from "lucide-react";
 import { Items } from "@/app/[title]/page";
 
-export default function ProductHero({products}:{products:any}) {
-
+export default function ProductHero({products}:{products:Items[]}) {
+  
   const [hoveredIndex, setHoveredIndex] = useState<number>(0);
   const [quantity, setQuantity] = useState(0);
   const increaseQuantity = () => {
@@ -67,7 +67,7 @@ export default function ProductHero({products}:{products:any}) {
                 <div className="scroll-m-20 pb-2 text-2xl md:text-3xl font-semibold tracking-wide transition-colors first:mt-0">
                   {item.title}
                 </div>
-                <p className="font-semibold text-lg opacity-30">{item.type}</p>
+                <p className="font-semibold text-lg opacity-30">{`${item.price}$`}</p>
               </div>
               <div>
                 <p className="flex font-bold text-sm tracking-wider leading-4">
@@ -144,7 +144,7 @@ export default function ProductHero({products}:{products:any}) {
                   Add to Cart
                 </Button>
                 <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-widest transition-colors leading-8 first:mt-0 text-[#212121]">
-                  $545.00
+                  {item.price}
                 </h2>
               </div>
             </div>
