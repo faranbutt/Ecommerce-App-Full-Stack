@@ -38,7 +38,7 @@ const deleteItems = (id:any) => {
 }
 
 const fetchProducts = async () => {
-  const res = await fetch("api/cart?user_id=b57650a9-c4bc-4961-8e8b-c7098054bceb");
+  const res = await fetch("/api/cart?user_id=b57650a9-c4bc-4961-8e8b-c7098054bceb");
   const response = await res.json();
   return response;
 };
