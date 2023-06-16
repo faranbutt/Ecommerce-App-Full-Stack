@@ -38,9 +38,7 @@ const deleteItems = (id:any) => {
 }
 
 const fetchProducts = async () => {
-  const res = await axios.get(
-    "/api/cart?user_id=b57650a9-c4bc-4961-8e8b-c7098054bceb"
-  );
+  const res = await axios.get("https://dine-three.vercel.app/api/cart?user_id=b57650a9-c4bc-4961-8e8b-c7098054bceb");
   return res;
 };
 
