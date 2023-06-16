@@ -1,4 +1,4 @@
-'use client'
+
 import axios from "axios";
 import { client } from "../../../sanity/lib/client";
 import Image from "next/image";
@@ -39,7 +39,7 @@ const deleteItems = (id:any) => {
 
 const fetchProducts = async () => {
   const res = await axios.get(
-    "http://localhost:3000/api/cart?user_id=b57650a9-c4bc-4961-8e8b-c7098054bceb"
+    "/api/cart?user_id=b57650a9-c4bc-4961-8e8b-c7098054bceb"
   );
   return res;
 };
