@@ -1,4 +1,4 @@
-
+'use client'
 import axios from "axios";
 import { client } from "../../../sanity/lib/client";
 import Image from "next/image";
