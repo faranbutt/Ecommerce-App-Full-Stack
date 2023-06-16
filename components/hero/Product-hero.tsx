@@ -5,7 +5,7 @@ import Image from "next/image";
 import { urlForImage } from "../../sanity/lib/image";
 import { Plus, Minus } from "lucide-react";
 import { Button } from "../ui/button";
-
+import axios from "axios";
 import {
   Tooltip,
   TooltipContent,
@@ -15,8 +15,20 @@ import {
 import { ShoppingCart } from "lucide-react";
 import { Items } from "@/app/[title]/page";
 
+
+const handlerAddtoCart = async (id:string,price:any,quantity:number) => {
+  console.log('cock');
+  const res = await axios.post('/api/cart',{
+    product_id:id,
+    quantity:quantity,
+    price:price,
+  })
+}
+
 export default function ProductHero({products}:{products:Items[]}) {
   
+
+ 
   const [hoveredIndex, setHoveredIndex] = useState<number>(0);
   const [quantity, setQuantity] = useState(0);
   const increaseQuantity = () => {
@@ -67,7 +79,7 @@ export default function ProductHero({products}:{products:Items[]}) {
                 <div className="scroll-m-20 pb-2 text-2xl md:text-3xl font-semibold tracking-wide transition-colors first:mt-0">
                   {item.title}
                 </div>
-                <p className="font-semibold text-lg opacity-30">{`${item.price}$`}</p>
+                <p className="font-semibold text-lg opacity-30">{item.type}</p>
               </div>
               <div>
                 <p className="flex font-bold text-sm tracking-wider leading-4">
@@ -139,12 +151,12 @@ export default function ProductHero({products}:{products:Items[]}) {
               </div>
 
               <div className="flex items-center gap-4">
-                <Button className="px-3 gap-x-2">
+                <Button className="px-3 gap-x-2" onClick={()=>handlerAddtoCart(item._id,item.price*quantity,quantity)}>
                   <ShoppingCart />
                   Add to Cart
                 </Button>
                 <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-widest transition-colors leading-8 first:mt-0 text-[#212121]">
-                  {item.price}
+                  {item.price*quantity}$
                 </h2>
               </div>
             </div>

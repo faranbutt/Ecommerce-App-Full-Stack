@@ -47,7 +47,7 @@ export default function Navbar() {
         <input type="text" placeholder={`What are you looking for`} className="border-none"/>
       </div>
       <div className="hidden sm:block rounded-full p-4 bg-gray-100 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-500 duration-300">
-        <ShoppingCartIcon className="w-7 h-7" />
+      <Link href={'/Cart'}><ShoppingCartIcon className="w-7 h-7" /></Link>
       </div>
 
       <div className="lg:hidden">
@@ -73,8 +73,8 @@ export default function Navbar() {
             <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem className="flex flex-col gap-3">
-            <NavigationMenuTrigger>Female</NavigationMenuTrigger>
-            <NavigationMenuTrigger>Male</NavigationMenuTrigger>
+            <NavigationMenuTrigger><Link href={'/Female'}>Female</Link></NavigationMenuTrigger>
+            <NavigationMenuTrigger><Link href={'/Male'}>Male</Link></NavigationMenuTrigger>
             <NavigationMenuTrigger>Kids</NavigationMenuTrigger>
             <NavigationMenuTrigger>All Products</NavigationMenuTrigger>
             <NavigationMenuContent>

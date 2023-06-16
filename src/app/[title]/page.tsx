@@ -3,7 +3,7 @@ import { client } from "../../../sanity/lib/client";
 import { Image as IImage } from "sanity";
 import ProductHero from "../../../components/hero/Product-hero";
 import ProductDesc from "../../../components/hero/ProductDesc";
-
+import { Plus,Minus } from "lucide-react";
 
 export type Items = {
   _id: string;
