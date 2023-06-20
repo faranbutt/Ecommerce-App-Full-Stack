@@ -4,9 +4,12 @@ import { cookies } from "next/headers";
 import { cartTable, db } from "@/lib/drizzle";
 import { eq,and } from "drizzle-orm";
 
+
+
 export async function GET(request:NextRequest){
     const req = request.nextUrl
     const uid = req.searchParams.get('user_id');
+    
     if(!uid){
         return NextResponse.json({data:"Nothing in the cart"})
     }
