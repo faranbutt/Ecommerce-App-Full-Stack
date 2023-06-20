@@ -34,11 +34,11 @@ export  async function POST(req: any, res: NextResponse){
         line_items: [transformedItem],
         mode: 'payment',
         success_url: redirectURL + '/payment/success',
-        cancel_url: redirectURL + '/payment/fail',
+        cancel_url: redirectURL + '/Cart',
         metadata: {
           images: item.image,
           name:"some additional info",
-          task:"Usman created a task"
+          task:"Faran created a task"
         },
       });
 
