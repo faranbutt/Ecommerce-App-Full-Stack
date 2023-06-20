@@ -24,7 +24,7 @@ export default function CartCheckout(props: any) {
     const stripe = await stripePromise;
 
     const checkoutSession = await fetch(
-      "http://localhost:3000/api/create-stripe-session",
+      "/api/create-stripe-session",
       {
         method: "POST",
         headers: {
