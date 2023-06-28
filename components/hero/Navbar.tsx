@@ -15,9 +15,11 @@ import { useState } from "react";
 import { Menu, XCircle } from "react-feather"; 
 import { Button } from "../ui/button";
 import Link from "next/link";
-
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 export default function Navbar() {
+  const quantity = useSelector((state:RootState) => state.reducer.totalQuantity)
   const [menuOpen, setisMenuOpen] = useState(false)
   const handleMenuToggle = () => {
     setisMenuOpen(!menuOpen);
@@ -46,10 +48,27 @@ export default function Navbar() {
         <Search />
         <input type="text" placeholder={`What are you looking for`} className="border-none"/>
       </div>
-      <div className="hidden sm:block rounded-full p-4 bg-gray-100 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-500 duration-300">
-      <Link href={'/Cart'}><ShoppingCartIcon className="w-7 h-7" /></Link>
+      
+      {/* <div>
+        {quantity === 0 ? (
+          <div className="hidden sm:block rounded-full p-4 bg-gray-100 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-500 duration-300">
+          <Link href={'/Cart'}><ShoppingCartIcon className="w-7 h-7" /></Link>
+          </div>
+        ):(
+          <div className="hidden sm:block rounded-full p-4 bg-red-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-500 duration-300">
+      <Link href={'/Cart'} className="w-7 h-7">{quantity}</Link>
       </div>
+        )}
+      </div> */}
 
+      <Link href={'/Cart'}>
+      <div className="hidden sm:block h-5 w-5 rounded-full bg-gray-200 relative p-5">
+        <span className="absolute right-1 top-0 rounded-full bg-red-500 h-5 w-5 text-white text-sx text-center">
+          {quantity}
+        </span>
+        <ShoppingCart className="h-6 w-6" />
+      </div>
+      </Link>
       <div className="lg:hidden">
         <button className="flex" onClick={handleMenuToggle}>
           {menuOpen ? (<XCircle />) : (<Menu />)}
@@ -63,11 +82,16 @@ export default function Navbar() {
               </Button>
             </div>
             <div>
+            <Link href={'/Cart'}>
             <div className="flex justify-center items-center p-5">
-              <div className="rounded-full bg-gray-100 p-5 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-500 duration-300">
-              <ShoppingCartIcon className="" />
-              </div>
+                <div className="relative rounded-full bg-gray-100 p-5 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-500 duration-300">
+                <span className="absolute right-1 top-0 rounded-full bg-red-500 h-5 w-5 text-white text-sx text-center">
+              {quantity}
+             </span>
+                <ShoppingCartIcon className="" />
+                </div>
             </div>  
+            </Link>
             </div>
             <div className="items-center justify-center mt-10">
             <NavigationMenu>

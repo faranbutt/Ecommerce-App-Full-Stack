@@ -12,12 +12,18 @@ import {
 import { Plus, Minus } from "lucide-react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { CounterActions } from "@/store/slice/counterSlice";
+import { toast } from "react-hot-toast";
 
 export default function CartProducts({ item, res, userID }: { item: any; res: any; userID:any }) {
+  const dispatch = useDispatch();
   const router = useRouter();
-  const fetchProduct =async (id:string) => {
+  const fetchProduct =async (id:string,quantity:number) => {
     const res = await axios.delete(`/api/cart?user_id=${userID}&product_id=${id}`);
     console.log(res);
+    dispatch(CounterActions.DeletefromCart(quantity))
+    toast.error('Product Deleted');
     router.refresh();
     console.log("Faran")
   };
@@ -37,7 +43,7 @@ export default function CartProducts({ item, res, userID }: { item: any; res: an
         <div className="flex flex-col justify-between w-3/4 gap-2">
           <div className="flex justify-between">
             <h3 className="font-light text-xl">{res.title}</h3>
-            <Button onClick={()=>fetchProduct(item.product_id)}>
+            <Button onClick={()=>fetchProduct(item.product_id,item.quantity)}>
               <Trash />
             </Button>
           </div>

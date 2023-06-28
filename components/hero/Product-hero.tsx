@@ -14,21 +14,16 @@ import {
 } from "../ui/tooltip";
 import { ShoppingCart } from "lucide-react";
 import { Items } from "@/app/[title]/page";
+import { useDispatch,useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import { toast } from 'react-hot-toast';
+import { CounterActions } from "@/store/slice/counterSlice";
 
-
-const handlerAddtoCart = async (id:string,price:any,quantity:number) => {
-  console.log('cock');
-  const res = await axios.post('/api/cart',{
-    product_id:id,
-    quantity:quantity,
-    price:price,
-  })
-}
 
 export default function ProductHero({products}:{products:Items[]}) {
   
-
- 
+  const dispatch = useDispatch();
+  const counterValue = useSelector((state:RootState)=>state.reducer.totalQuantity);
   const [hoveredIndex, setHoveredIndex] = useState<number>(0);
   const [quantity, setQuantity] = useState(0);
   const increaseQuantity = () => {
@@ -38,6 +33,19 @@ export default function ProductHero({products}:{products:Items[]}) {
     setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 0));
   };
   console.log(products)
+
+const handlerAddtoCart = async (id:string,price:any,quantity:number) => {
+  console.log('cock');
+  const res = await axios.post('/api/cart',{
+    product_id:id,
+    quantity:quantity,
+    price:price,
+  })
+  dispatch(CounterActions.AddtoCart(quantity));
+  toast.success('Product Added');
+}
+
+
   return (
     <div>
       <div className="grid mx-20 items-center justify-center">

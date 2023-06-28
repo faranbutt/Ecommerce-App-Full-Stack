@@ -150,10 +150,11 @@ const fetchImages = async (id: string) => {
 //   )
 // }
 
-let totalQuantity = 0;
-let totalPrice = 0;
+
 
 export default function CartFilled({ data,userID }: { data: any,userID:any }) {
+  let totalQuantity = 0;
+  let totalPrice = 0;
   return (
     <div className="p-20">
       <div className="scroll-m-20 text-3xl font-semibold tracking-tighter md:tracking-wider transition-colors first:mt-0">
