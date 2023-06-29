@@ -1,27 +1,28 @@
 'use client'
-import { loadStripe } from "@stripe/stripe-js";
 
 import { Button } from "../ui/button";
 import { useState } from "react";
+import getStripe from "@/lib/stripe";
 
 export default function CartCheckout(props: any) {
-  let { quantity, price } = props;
+  let { quantity, price, apple } = props;
+  console.log("Fara",apple);
   const [loading, setLoading] = useState(false);
-  const [item, setItem] = useState({
-    name: "All Items",
-    description: "Clothes",
-    image:
-      "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
-    quantity: quantity,
-    price: price,
-  });
+  // const [item, setItem] = useState({
+  //   name: "All Items",
+  //   description: "Clothes",
+  //   image:
+  //     "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
+  //   quantity: quantity,
+  //   price: price,
+  // });
 
 
-  const publishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string;
-  const stripePromise = loadStripe(publishableKey);
+ 
   const createCheckOutSession = async () => {
+    
     setLoading(true);
-    const stripe = await stripePromise;
+    const stripe = await getStripe();
 
     const checkoutSession = await fetch(
       "/api/create-stripe-session",
@@ -31,7 +32,7 @@ export default function CartCheckout(props: any) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          item: item,
+          item: apple,
         }),
       }
     );

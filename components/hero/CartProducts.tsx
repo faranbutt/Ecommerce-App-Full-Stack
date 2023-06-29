@@ -17,6 +17,7 @@ import { CounterActions } from "@/store/slice/counterSlice";
 import { toast } from "react-hot-toast";
 
 export default function CartProducts({ item, res, userID }: { item: any; res: any; userID:any }) {
+  console.log("res.images",res)
   const dispatch = useDispatch();
   const router = useRouter();
   const fetchProduct =async (id:string,quantity:number) => {
@@ -34,7 +35,7 @@ export default function CartProducts({ item, res, userID }: { item: any; res: an
       <div className="flex flex-col md:flex-row gap-8">
         <div className="rounded-lg">
           <Image
-            src={urlForImage(res.images[0]).url()}
+            src={urlForImage(res.image).url()}
             alt="person"
             width={230}
             height={230}
@@ -42,13 +43,13 @@ export default function CartProducts({ item, res, userID }: { item: any; res: an
         </div>
         <div className="flex flex-col justify-between w-3/4 gap-2">
           <div className="flex justify-between">
-            <h3 className="font-light text-xl">{res.title}</h3>
+            <h3 className="font-light text-xl">{res.name}</h3>
             <Button onClick={()=>fetchProduct(item.product_id,item.quantity)}>
               <Trash />
             </Button>
           </div>
           <p className="leading-4 text-[#666] font-semibold text-sm">
-            {res.type}
+            {res.description}
           </p>
           <p className="font-semibold leading-5 text-sm text-[#212121] ">
             Delivery Estimation
