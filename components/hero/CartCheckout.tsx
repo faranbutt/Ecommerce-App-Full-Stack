@@ -52,10 +52,10 @@ export default function CartCheckout(props: any) {
   return (
     <div>
       <div
-        className="p-8 bg-[#fbfcff] flex flex-col gap-8"
+        className="md:p-8 bg-[#fbfcff] flex flex-col gap-8"
         style={{ flex: "1 1" }}
       >
-        <h3>Order Summary</h3>
+        <h3 className="text-2xl font-bold" >Order Summary</h3>
         <div className="flex justify-between gap-16">
           <p className="font-bold">Quantity</p>
           <span>{quantity} Product</span>
@@ -64,8 +64,8 @@ export default function CartCheckout(props: any) {
                <p className="font-bold">Sub Total</p>
                <span>${price}</span>
         </div>
-        <div className="flex justify-between gap-16">
-            <Button onClick={createCheckOutSession}>Proceed to Checkout</Button>
+        <div className="flex md:justify-between md:gap-16">
+            <Button onClick={createCheckOutSession} className="w-full">Proceed to Checkout</Button>
        </div>
       </div>
     </div>

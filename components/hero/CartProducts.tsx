@@ -31,6 +31,7 @@ export default function CartProducts({ item, res, userID }: { item: any; res: an
 
   return (
     <>
+    
     <div className="mt-8 gap-16 flex flex-col" style={{ flex: "3 1" }}>
       <div className="flex flex-col md:flex-row gap-8">
         <div className="rounded-lg">

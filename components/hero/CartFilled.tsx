@@ -56,20 +56,22 @@ export default function CartFilled({ data, userID }: { data: any; userID: any })
   }, [data.data]);
 
   return (
-    <div className="p-20">
+    <div className="p-10 md:p-20">
       <div className="scroll-m-20 text-3xl font-semibold tracking-tighter md:tracking-wider transition-colors first:mt-0">
         Shopping Cart
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex flex-col md:flex-row justify-center ">
+       <div className='flex flex-col'> 
         {items.length > 0 &&
           data.data.map((item: any, index: number) => {
             console.log("II",items)
             return(
             <div key={index}>
-              <CartProducts item={item} res={items[index]} userID={userID} />
+              <CartProducts item={item} res={items[index]} userID={userID}/>
             </div>
             );
 })}
+</div>
         {items.length > 0 && (
           <CartCheckout quantity={totalQuantity} price={totalPrice} apple={items} />
         )}
