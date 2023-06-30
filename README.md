@@ -15,8 +15,8 @@ https://dine-three.vercel.app/
 
 ## To Run/Change this design:
 ```
-git clone https://github.com/faranbutt/Portfolio-Website
-cd Portfolio-Website
+git clone https://github.com/faranbutt/Ecommerce-App-Full-Stack
+cd Ecommerce-App-Full-Stack
 npm install
 npm run dev
 ```
