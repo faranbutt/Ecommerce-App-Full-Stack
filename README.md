@@ -1,15 +1,17 @@
-## Faran-DEV (Full Stack Portfolio Website) 👨‍💻
+## Faran-DEV (Full Stack Portfolio Website) <p align="left"> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://redux.js.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" width="40" height="40"/> </a> <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> </a> </p>
 * This is a personal project to challenge myself to create my own personal website.
 ## Technologies used:
-<a href="https://www.linkedin.com/in/faranbutt/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="faran-butt" height="30" width="40" /></a>
+* Front End ===:> Next.js Tailwind CSS, Sanity, Redux, Stripe, Vercel
+* Back End ===:> Next.js , PostgreSQL, Drizzle ORM, Stripe
 ## Key Features:
-* Users Contact Form 🔒
 * Optimized and Fast 🚀
+* Sanity is used as a Headless CMS 🪐
+* Payment Gateway through Stripe 💸
 * Fully responsive design been tested on several devices 📱
 * The interface is interactive due to Tailwind be interactive with some meaningfull colors. 🎨
 
 ## FrontEnd Deployed on Vercel:
-https://faran-butt.vercel.app/
+https://dine-three.vercel.app/
 
 ## To Run/Change this design:
 ```
