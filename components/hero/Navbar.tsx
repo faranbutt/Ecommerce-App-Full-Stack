@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <nav className="flex p-10 gap-x-28 justify-center items-center">
         <div className="ml-4">
-           <Link href={'/'}><img src="/Logo.webp" alt="logo" className=""/></Link> 
+           <Link href={'/'}><img src="/Logo.webp" alt="logo"/></Link> 
         </div> 
       <div className="hidden sm:block">
       <NavigationMenu>
@@ -62,12 +62,16 @@ export default function Navbar() {
       </div> */}
 
       <Link href={'/Cart'}>
-      <div className="hidden sm:block h-5 w-5 rounded-full bg-gray-200 relative p-5">
-        <span className="absolute right-1 top-0 rounded-full bg-red-500 h-5 w-5 text-white text-sx text-center">
-          {quantity}
-        </span>
-        <ShoppingCart className="h-6 w-6" />
-      </div>
+        <div className="hidden sm:block">
+      <div className="flex justify-center items-center p-5">
+                <div className="relative rounded-full bg-gray-100 p-5 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-500 duration-300">
+                <span className="absolute right-1 top-0 rounded-full bg-red-500 h-5 w-5 text-white text-sx text-center">
+              {quantity}
+             </span>
+                <ShoppingCartIcon className="" />
+                </div>
+            </div>
+            </div>  
       </Link>
       <div className="lg:hidden">
         <button className="flex" onClick={handleMenuToggle}>
