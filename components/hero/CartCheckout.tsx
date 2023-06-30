@@ -52,7 +52,7 @@ export default function CartCheckout(props: any) {
   return (
     <div>
       <div
-        className="md:p-8 bg-[#fbfcff] flex flex-col gap-8"
+        className="py-8 md:px-8 bg-[#fbfcff] flex flex-col gap-8"
         style={{ flex: "1 1" }}
       >
         <h3 className="text-2xl font-bold" >Order Summary</h3>
