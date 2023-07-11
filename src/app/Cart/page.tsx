@@ -7,6 +7,9 @@ import EmptyCart from "../../../components/hero/EmptyCart";
 import { Button } from "../../../components/ui/button";
 import { cookies } from "next/headers";
 import CartExtra from "../../../components/hero/CartExtra";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+
 export type SanityProduct = {
   title: string;
   type: string;
@@ -15,6 +18,7 @@ export type SanityProduct = {
 
 
 const fetchUser = async () => {
+  
   let user_ID: any = cookies().get('user_id')?.value;
   console.log(user_ID);
   if(!user_ID){

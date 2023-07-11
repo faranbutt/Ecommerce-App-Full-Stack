@@ -6,6 +6,8 @@ import CartFilled from './CartFilled';
 import EmptyCart from './EmptyCart';
 import { RootState } from '@/store/store';
 import { useSelector } from 'react-redux';
+import { useRouter } from 'next/navigation';
+
 
 type fetchData = {
   data:[]
@@ -19,9 +21,11 @@ const fetchProducts = async (user:any) => {
 
 
 export default function CartExtra({user}:{user:any}) {  
+  const router = useRouter()
     const [datas,setData] = useState<fetchData>({data:[]});
     const [random,setRandom] = useState(false);
     const quantity = useSelector((state:RootState)=>state.reducer.totalQuantity);
+    router.refresh();
     console.log(user)
 
  useEffect(()=>{
